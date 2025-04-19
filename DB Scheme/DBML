@@ -1,0 +1,71 @@
+Table Games {
+  app_id int [pk]
+  app_type text
+  name text
+  genre text
+  release_date date
+  developer text
+  publisher text
+  franchise text
+}
+
+Table GameStats {
+  app_id int [ref: > Games.app_id]
+  rating decimal
+  follows int
+  online int
+  peak int
+}
+
+Table PriceHistory {
+  price_id int [pk]
+  app_id int [ref: > Games.app_id]
+  currency text
+  date_recorded date
+  current_price decimal
+  converted_price decimal
+  lowest_recorded_price decimal
+}
+
+Table Tags {
+  tag_id int [pk]
+  name text
+}
+
+Table GameTags {
+  app_id int [ref: > Games.app_id]
+  tag_id int [ref: > Tags.tag_id]
+}
+
+Table Categories {
+  category_id int [pk]
+  name text
+}
+
+Table GameCategories {
+  app_id int [ref: > Games.app_id]
+  category_id int [ref: > Categories.category_id]
+}
+
+Table Sales {
+  sale_id int [pk]
+  sale_name text
+  starts_on date
+  ends_on date
+}
+
+Table SaleGames {
+  sale_id int [ref: > Sales.sale_id]
+  app_id int [ref: > Games.app_id]
+}
+
+Table Collections {
+  collection_id int [pk]
+  name text
+}
+
+Table CollectionGames {
+  collection_id int [ref: > Collections.collection_id]
+  app_id int [ref: > Games.app_id]
+  added_on date
+}
