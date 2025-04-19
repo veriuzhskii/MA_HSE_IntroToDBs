@@ -2,6 +2,6 @@ HSE SPB (Master's degree)
 
 Artem Veriuzhskii
 
-Introduction to programming
+Introduction to databases
 
-2024
+2025
