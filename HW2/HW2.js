@@ -80,7 +80,7 @@ db.phonemes.find({ language_id: 2 }, { symbol: 1, ipa: 1, _id: 0 });
 // простой запрос 2: все английские граммемы (сущ.))
 db.grammemes.find({ language_id: 1, part_of_speech: "Noun" });
 
-// составной запрос 1: Примеры слов с IPA и языком
+// составной запрос 1: примеры слов с IPA и языком
 db.examples.aggregate([
   {
     $lookup: {
