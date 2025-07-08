@@ -67,7 +67,6 @@ db.grammemes.insertMany([
   { _id: 4, language_id: 2, part_of_speech: "Noun", category: "Case", value: "Творительный" }
 ]);
 
-
 // изменение описания фонемы 
 db.phonemes.updateOne(
   { symbol: "ш" },
